@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #030303;
+    color: #fffcfc;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #ffd700;
+    font-size: 1.5em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #ffd700;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hero {
+    background: url('/images/hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #ffd700;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.featured-dishes, .testimonials, .special-offers, .newsletter, .about-us, .menu, .shop, .blog, .contact-us {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-dishes h2, .testimonials h2, .special-offers h2, .newsletter h2, .about-us h1, .menu h1, .shop h1, .blog h1, .contact-us h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.dishes-container, .menu-category, .shop, .blog {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dish, .menu-item, .shop-item, .blog-post {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.dish img, .menu-item img, .shop-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dish h3, .menu-item h3, .shop-item h2, .blog-post h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.dish p, .menu-item p, .shop-item p, .blog-post p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.testimonial, .offer {
+    background-color: #4b4a46;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 200px;
+}
+
+.newsletter button {
+    background-color: #ffd700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #ffd700;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .nav-links li {
+        animation: navLinkFade 0.5s ease forwards;
+    }
+}
